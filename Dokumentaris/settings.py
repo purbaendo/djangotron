@@ -25,7 +25,7 @@ SECRET_KEY = 'm!k%(cirl7yrrobtb-tdyd&=91$3s(p8iob!2129_ejci%$)2&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'djangotron.herokuapp.com']
 
 
 # Application definition
