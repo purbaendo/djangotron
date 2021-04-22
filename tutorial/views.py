@@ -86,37 +86,38 @@ def index(request):
         'git_counter' : git_posts.count(),
         'android_counter' : android_posts.count(),
         'ios_counter' : ios_posts.count(),
+        'page':'html',
     }
     return render(request, 'index.html', context)
 
 def topic(request, pagename):
 
-    if pagename == 'editor':
-        return render(request, 'tutorial/editor.html')
-    else:
+    # if pagename == 'editor':
+    #     return render(request, 'tutorial/editor.html')
+    # else:
         context = {
             'content_list':Post.objects.filter(category=pagename),
             'first':Post.objects.filter(category=pagename).first(),
             'topic':Page.objects.get(permalink=pagename),
         }
-        return render(request, 'tutorial/topic.html', context)
+        return render(request, 'topic.html', context)
 
 def post_detail(request, pagename, title_post):
     context = {
         'content_list':Post.objects.filter(category=pagename),
         'article':Post.objects.get(slug=title_post),
     }
-    return render(request, 'tutorial/witheditor.html', context)
+    return render(request, 'witheditor.html', context)
 
 
 def custom_page_not_found_view(request, exception):
-    return render(request, "tutorial/404.html", {})
+    return render(request, "404.html", {})
 
 def custom_error_view(request, exception=None):
-    return render(request, "tutorial/500.html", {})
+    return render(request, "500.html", {})
 
 def custom_permission_denied_view(request, exception=None):
-    return render(request, "tutorial/403.html", {})
+    return render(request, "403.html", {})
 
 def custom_bad_request_view(request, exception=None):
-    return render(request, "tutorial/400.html", {})
+    return render(request, "400.html", {})
