@@ -92,9 +92,11 @@ def index(request):
 
 def topic(request, pagename):
 
-    # if pagename == 'editor':
-    #     return render(request, 'tutorial/editor.html')
-    # else:
+    if pagename == 'editor':
+        return render(request, 'tutorial/editor.html')
+    elif pagename == '/':
+        return render(request, 'index.html')
+    else:
         context = {
             'content_list':Post.objects.filter(category=pagename),
             'first':Post.objects.filter(category=pagename).first(),
