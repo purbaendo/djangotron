@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #0558d2 !important;
+}
+
+.category {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.toTop {
+  padding: 5px 3px;
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+}
+
+.nextpost {
+  float: right;
+}
+
+.previouspost {
+  float: left;
+}
+
